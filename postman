@@ -1,0 +1,835 @@
+{
+	"info": {
+		"_postman_id": "34cbd7e1-9117-4d5b-bc99-6a64f6bc3bac",
+		"name": "Dumbways Stage 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23637097"
+	},
+	"item": [
+		{
+			"name": "Day 6",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "user@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "imageUrl",
+									"type": "file",
+									"src": "/C:/Users/HP/Downloads/ktp.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_env}}/api/v1/auth/register",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Auth",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_env}}/api/v1/me",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJpYXQiOjE3NTYxODk5NDMsImV4cCI6MTc1NjI3NjM0M30.INkPZRx7PBPof0cJztT1nmBQ9Qad1BVTHe7IKr5oFNo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imageUrl",
+									"type": "file",
+									"src": "/C:/Users/HP/Downloads/pngtree-user-profile-avatar-png-image_10211467.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_env}}/api/v1/upload-profile-picture",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"upload-profile-picture"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_env}}/api/v1/auth/login",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJpYXQiOjE3NTYxODk5NDMsImV4cCI6MTc1NjI3NjM0M30.INkPZRx7PBPof0cJztT1nmBQ9Qad1BVTHe7IKr5oFNo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Product 1",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "7000",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "imageUrl",
+									"type": "file",
+									"src": "/C:/Users/HP/Downloads/pngtree-user-profile-avatar-png-image_10211467.png"
+								},
+								{
+									"key": "userId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_env}}/api/v1/product/add",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Product Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJpYXQiOjE3NTYxOTMxNjMsImV4cCI6MTc1NjI3OTU2M30.kwBOir1Uv5ZknJyHtKXbIahrC16GeRu9dNNEy8iPNkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "imageUrl",
+									"type": "file",
+									"src": "/C:/Users/HP/Downloads/images.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_env}}/api/v1/products/upload-image",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"upload-image"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Final Task",
+			"item": [
+				{
+					"name": "Test",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJpYXQiOjE3NTYxOTMxNjMsImV4cCI6MTc1NjI3OTU2M30.kwBOir1Uv5ZknJyHtKXbIahrC16GeRu9dNNEy8iPNkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "imageUrl",
+									"type": "file",
+									"src": "/C:/Users/HP/Downloads/images.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_env}}/api/v1/auth/me",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "user2@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "User 3",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/HP/Downloads/EG-gat-x105-strike-gundam.jpeg"
+								},
+								{
+									"key": "address",
+									"value": "Jl. Camar No. 45 RT 02/RW 05, Kel. Sukamaju, Kec. Cibinong,  \nKab. Bogor, Jawa Barat 16915",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_env}}/api/v1/auth/register",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_env}}/api/v1/auth/login",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer Points",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDgzNzk4LCJleHAiOjE3NTcwODg1OTh9.7tFBtEcNhbXerHsDQ1Zb0vvWKumNh9lzbD80zcla8SA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"receiverId\": 2,\r\n    \"amount\": 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_env}}/api/v1/users/transfer",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile Upload Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDgzNzk4LCJleHAiOjE3NTcwODg1OTh9.7tFBtEcNhbXerHsDQ1Zb0vvWKumNh9lzbD80zcla8SA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/HP/Downloads/HG-asw-g-08-gundam-barbatos.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_env}}/api/v1/users/1/upload",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Products Get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDg2ODYyLCJleHAiOjE3NTcwOTE2NjJ9.vEI1UcUYozYTM9SGUvvaY9yMU86iw7ZmdvD9trdxtoA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{local_env}}/api/v1/products?minPrice=120000&sortBy=asc",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products"
+							],
+							"query": [
+								{
+									"key": "minPrice",
+									"value": "120000"
+								},
+								{
+									"key": "maxPrice",
+									"value": "120000",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDg2ODYyLCJleHAiOjE3NTcwOTE2NjJ9.vEI1UcUYozYTM9SGUvvaY9yMU86iw7ZmdvD9trdxtoA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "EG RX-93 V Gundam",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "EG",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/HP/Downloads/EG-rx-93-v-gundam.jpg"
+								},
+								{
+									"key": "price",
+									"value": "180000",
+									"type": "text"
+								},
+								{
+									"key": "qty",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_env}}/api/v1/products",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDg2ODYyLCJleHAiOjE3NTcwOTE2NjJ9.vEI1UcUYozYTM9SGUvvaY9yMU86iw7ZmdvD9trdxtoA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"data\": {\r\n        \"name\": \"Test update\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_env}}/api/v1/products",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Upload Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDg2ODYyLCJleHAiOjE3NTcwOTE2NjJ9.vEI1UcUYozYTM9SGUvvaY9yMU86iw7ZmdvD9trdxtoA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/HP/Downloads/HG-asw-g-08-gundam-barbatos.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_env}}/api/v1/products/3/upload",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"3",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Soft Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDg2ODYyLCJleHAiOjE3NTcwOTE2NjJ9.vEI1UcUYozYTM9SGUvvaY9yMU86iw7ZmdvD9trdxtoA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_env}}/api/v1/products/3/delete",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"3",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Restore",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDg2ODYyLCJleHAiOjE3NTcwOTE2NjJ9.vEI1UcUYozYTM9SGUvvaY9yMU86iw7ZmdvD9trdxtoA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{local_env}}/api/v1/products/3/restore",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"3",
+								"restore"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDg2ODYyLCJleHAiOjE3NTcwOTE2NjJ9.vEI1UcUYozYTM9SGUvvaY9yMU86iw7ZmdvD9trdxtoA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 1,\r\n    \"qty\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_env}}/api/v1/orders",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDg2ODYyLCJleHAiOjE3NTcwOTE2NjJ9.vEI1UcUYozYTM9SGUvvaY9yMU86iw7ZmdvD9trdxtoA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_env}}/api/v1/orders",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Orders By User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDg2ODYyLCJleHAiOjE3NTcwOTE2NjJ9.vEI1UcUYozYTM9SGUvvaY9yMU86iw7ZmdvD9trdxtoA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 1,\r\n    \"qty\": 1\r\n}"
+						},
+						"url": {
+							"raw": "{{local_env}}/api/v1/orders/user",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
